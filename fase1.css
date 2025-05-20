@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url(./assets/bkTeste8.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#notificacao {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 9999;
+}
+
+#notificacao.visivel {
+    opacity: 1;
+}
+
+#lake {
+    height: 75vh;
+    width: 60vw;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 10px;
+
+    background-image: url("./assets/bkLagoTeste.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.trash {
+  position: absolute;
+  width: 50px;
+  animation: flutuar 3s ease-in-out infinite;
+  cursor: grab;
+  z-index: 2;
+}
+
+@keyframes flutuar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+#bin {
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 10px;
+}

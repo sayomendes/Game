@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url(./assets/bkTelaInicial3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#inicio {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#telaInicial {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+}
+
+#planetildo {
+  width: 400px;
+}
+
+h1 {
+  font-family: "Barriecito", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffff;
+}
+
+
+button {
+  border-radius: 7px;
+  border: none;
+  gap: 5px;
+  font-family: "Barriecito", system-ui;
+  background-color: #ADEBB3;
+  
+}

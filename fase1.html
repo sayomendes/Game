@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planetildo</title>
+
+    <link rel="stylesheet" href="./fase1.css">
+    
+</head>
+<body>
+    
+    <section id="fase1" class="oculta">
+
+        <div id="notificacao" class="oculto"></div>
+
+        <div id="lake" style="position: relative; height: 400px;"></div>
+
+        <div id="bin">
+            <div ondragover="permitirSoltar(event)" ondrop="soltarNaLixeira(event, 'papel')">
+                <img src="./assets/lixeiras/azulPapel.PNG" alt="lixeira azul para papel">
+            </div>
+            <div ondragover="permitirSoltar(event)" ondrop="soltarNaLixeira(event, 'plastico')">
+                <img src="./assets/lixeiras/vermelhaPlastico.PNG" alt="lixeira vermelha para plástico">
+            </div>
+            <div ondragover="permitirSoltar(event)" ondrop="soltarNaLixeira(event, 'vidro')">
+                <img src="./assets/lixeiras/verdeVidro.PNG" alt="lixeira verde para vidro">
+            </div>
+            <div ondragover="permitirSoltar(event)" ondrop="soltarNaLixeira(event, 'metal')">
+                <img src="./assets/lixeiras/amarelaMetal.PNG" alt="lixeira amarela para metal">
+            </div>
+            <div ondragover="permitirSoltar(event)" ondrop="soltarNaLixeira(event, 'organico')">
+                <img src="./assets/lixeiras/marromOrganico.PNG" alt="lixeira marrom para organico">
+            </div>
+            <div ondragover="permitirSoltar(event)" ondrop="soltarNaLixeira(event, 'naoReciclavel')">
+                <img src="./assets/lixeiras/cinzaNaoReciclaveis.PNG" alt="lixeira cinza para não recicláveis">
+            </div>
+        </div>
+
+    </section>
+
+    <script src="./animation.js"></script>
+
+    
+    
+</body>
+</html>
