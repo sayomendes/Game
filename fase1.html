@@ -9,10 +9,29 @@
     
 </head>
 <body>
-    
+    <audio id="somFundo" src="./assets/som/puzzle-game-bright-casual-video-game-music-249202.mp3" loop autoplay></audio>
+
+    <div id="telaFinal" class="oculto">
+        <img id="planetildoResultado" src="" alt="Planetildo" />
+        <p id="mensagemFinal"></p>
+        <button onclick="reiniciarFase()">Recomeçar</button>
+    </div>
+
     <section id="fase1" class="oculta">
 
         <div id="notificacao" class="oculto"></div>
+
+        <div id="informacoes">
+            <div id="pontuacao">Pontuação</div>
+
+            <div id="cronometro">Tempo</div>
+
+        </div>
+        
+        <div id="mensagem">
+            <p>É muito importante manter o lixo fora dos lagos devido aos graves impactos ambientais e de saúde pública que o descarte inadequado pode causar. <br>
+            A poluição da água por resíduos compromete a vida aquática, contamina os recursos hídricos e pode levar à proliferação de doenças.</p>
+        </div>
 
         <div id="lake" style="position: relative; height: 400px;"></div>
 
@@ -36,7 +55,8 @@
                 <img src="./assets/lixeiras/cinzaNaoReciclaveis.PNG" alt="lixeira cinza para não recicláveis">
             </div>
         </div>
-
+        <a href="./inicio.html"><button id="buttonVoltar">VOLTAR</button></a>
+        
     </section>
 
     <script src="./animation.js"></script>

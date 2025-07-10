@@ -61,11 +61,22 @@ function criarLixos() {
 
 window.onload = function () {
     criarLixos();
+
+    //NOVIDADE - SOM DE FUNDO
+    iniciarCronometro();
+
+    var som = document.getElementById("somFundo")
+    som.volume = 0.5; //colume de 0.0 a 1.0
+    som.play().catch(function (erro) {
+    console.log("Som bloqueado até a interação do usuário");
+    });
+
 }; 
 
 // Criar o sistema "arrasta e solta" os lixos
 var lixoAtual = null; //Guarda o tipo de lixo. null representa ausencia de valor.                                                  usencia de valor.
 var lixoAtualElemento = null; //Guarda a img
+var pontuacao = 0; //NOVIDADE
 
 //Permitir soltar o lixo na lizeira
 function permitirSoltar(evento) {
@@ -81,7 +92,16 @@ function soltarNaLixeira(evento, tipoLixeira) {
     //Se o tipo de lixo for igual ao tipo de lixeira, remove a img do lixo da tela
     if (lixoAtual === tipoLixeira) {
         if (lixoAtualElemento) {
+            pontuacao = pontuacao + 10; //NOVIDADE
+            document.getElementById("pontuacao").textContent = "Pontuação: " + pontuacao; //NOVIDADE
             lixoAtualElemento.remove();
+            
+            var lixosRestantes = document.querySelectorAll(".trash");
+            if (lixosRestantes.length === 0) {
+                clearInterval(intervalo);
+                mostrarTelaFinal(true);
+            }
+            
         }
     } else {
         mostrarNotificacao("Lixeira incorreta!")
@@ -95,9 +115,53 @@ function soltarNaLixeira(evento, tipoLixeira) {
 function mostrarNotificacao(mensagem) {
     var notificacao = document.getElementById("notificacao");
     notificacao.textContent = mensagem;
+    notificacao.classList.remove("oculto");
     notificacao.classList.add("visivel");
 
     setTimeout(function () {
         notificacao.classList.remove("visivel");
     }, 2000); // 2 segundos visível
+}
+
+var tempoRestante = 90;
+var intervalo;
+
+function iniciarCronometro() {
+    var cronometro = document.getElementById("cronometro");
+    intervalo = setInterval(function () {
+        tempoRestante--;
+        cronometro.textContent = "Tempo: " + tempoRestante + "s";
+
+        if (tempoRestante <= 0) {
+            clearInterval(intervalo);
+            encerrarJogo();
+        }
+    }, 1000); // a cada 1 segundo
+}
+
+function mostrarTelaFinal(faseCompleta) {
+    var telaFinal = document.getElementById("telaFinal");
+    var planetildo = document.getElementById("planetildoResultado");
+    var mensagem = document.getElementById("mensagemFinal");
+
+    telaFinal.classList.remove("oculto");
+
+    if (faseCompleta) {
+        planetildo.src = "./assets/planetildo/alegre.png";
+        mensagem.textContent = "Parabéns! Você salvou o lago!";
+    } else {
+        planetildo.src = "./assets/planetildo/triste.png";
+        mensagem.textContent = "Oh não! O tempo acabou!";
+    }
+}
+function encerrarJogo() {
+    var lixosRestantes = document.querySelectorAll(".trash");
+    if (lixosRestantes.length > 0) {
+        clearInterval(intervalo); // parar o cronômetro
+        mostrarTelaFinal(false); // false = não completou a fase
+    }
+}
+
+function reiniciarFase() {
+    location.reload(); // Recarrega a página
 }

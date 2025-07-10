@@ -8,23 +8,32 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-image: url(./assets/bkTelaInicial3.jpg);
+  background-image: url(./assets/bkNatureza.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #inicio {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #telaInicial {
+  width: 25%;
+  height: 70vh;
   display: flex !important;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
+
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* branco semi-transparente */
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  text-align: center;
+  backdrop-filter: blur(5px); /* efeito vidro fosco (opcional) */
 
 }
 
@@ -36,15 +45,33 @@ h1 {
   font-family: "Barriecito", system-ui;
   font-weight: 400;
   font-style: normal;
-  color: #ffff;
+  color: #000000;
+  margin-bottom: 10px;
 }
 
 
 button {
+  width: 110px;
+  height: 40px;
   border-radius: 7px;
-  border: none;
-  gap: 5px;
-  font-family: "Barriecito", system-ui;
-  background-color: #ADEBB3;
+  border: 3px solid #8B4513;
+  gap: 10px;
+
+  font-weight: bold;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 15px;
+  color: white;
   
+}
+
+#iniciar {
+  background-color: #F47C3C;
+}
+
+#instrucoes {
+  background-color: #F8C531;
+}
+
+#creditos {
+  background-color: #49C563;
 }
