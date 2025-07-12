@@ -1,4 +1,6 @@
 
+//ColabEduc - https://docs.google.com/document/d/1gxLJqoeDxCyAUIQgYo0JlnVHgxpDeX0fHzUpqjvD_Xw/edit?tab=t.0
+
 //Função criar lixos. Função é um conjunto de instruções que só sera executado quando for chamado.
 function criarLixos() {
 
@@ -107,7 +109,7 @@ function soltarNaLixeira(evento, tipoLixeira) {
         mostrarNotificacao("Lixeira incorreta!")
     }
 
-    //Precisa?
+    
     lixoAtual = null;
     lixoAtualElemento = null;
 }
